@@ -1,0 +1,14 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+wrapper {
+    gradleVersion = rootProject.property('org.gradle.version')
+}
+
+javafx {
+    version = "17"
+    modules = [ 'javafx.controls' ]
+}
+

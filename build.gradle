@@ -9,18 +9,20 @@ repositories {
     mavenCentral()
 }
 
-wrapper {
-    gradleVersion = rootProject.property('org.gradle.version')
+javafx {
+    version = '17'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
-javafx {
-    version = "17"
-    modules = [ 'javafx.controls' ]
-}
+mainClassName = 'com.dburyak.sandbox.javafx.HelloFx'
 
 jlink {
     options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
     launcher {
         name = 'hellofx'
     }
+}
+
+wrapper {
+    gradleVersion = rootProject.property('org.gradle.version')
 }
